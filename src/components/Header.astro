@@ -6,27 +6,26 @@ import { SITE } from "@consts";
 
 <header>
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
+    <div class="flex flex-col items-center gap-2">
       <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.NAME}
+        <div class="flex flex-col items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="h-32 w-auto">
+            <polygon points="50,5 93,27.5 93,72.5 50,95 7,72.5 7,27.5" fill="black"/>
+          </svg>
+          <img src="/logomain.png" alt={SITE.NAME} class="h-24 w-auto" />
         </div>
       </Link>
-      <nav class="flex gap-1">
+      <nav class="flex gap-1 text-black/70">
         <Link href="/blog">
           blog
         </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
+        <span>⬢</span>
         <Link href="/projects">
           projects
+        </Link>
+        <span>⬢</span>
+        <Link href="/contact">
+          about
         </Link>
       </nav>
     </div>

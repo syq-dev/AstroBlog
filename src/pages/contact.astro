@@ -1,0 +1,72 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE, SOCIALS } from "@consts";
+---
+
+<PageLayout title="About" description="About me">
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-brand-steel/85">
+        About
+      </div>
+      <div class="animate space-y-6">
+        <div class="space-y-4">
+          <p class="font-semibold text-brand-steel/85">So What Is This?</p>
+          <p>
+            I'm Seej. Hardware engineering by education, systems engineer by training,
+            AI enthusiast by interest. I tend to collect skills the way some people collect
+            hobbies. Which is also to say I collect hobbies. Photography, watercolor, sketching,
+            and whatever else catches my eye.
+          </p>
+          <p>
+            Married, with a mini-Aussie named Momo who has strong opinions about everything.
+            Big lover of space and space-adjacent things. This blog is where all of it lands.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <p class="font-semibold text-brand-steel/85">Why The Hexagons?</p>
+          <p>
+            Hexagons tessellate. They fit together perfectly, edge to edge, no gaps, no waste.
+            Nature figured this out a long time ago. Honeycombs, basalt columns, compound eyes.
+            It's the most efficient way to cover a surface with repeating shapes.
+          </p>
+          <p>
+            My brain works a lot like that. ADHD means interests don't stack neatly in a line.
+            They tile outward in every direction, each one connecting to the next in ways that
+            aren't always obvious at first. It can look chaotic from the outside. From the inside,
+            it feels like coverage. Every weird detour fills in a cell. Nothing is wasted.
+          </p>
+          <p>
+            The hexagon is also a piece of something larger. On its own it's just a shape.
+            But place enough of them together and you get a surface, a structure, a pattern
+            with real strength. That's the idea here. Each project, post, or obsession is one
+            tile in a bigger picture that's still being assembled.
+          </p>
+          <p>
+            Though if you stare at it long enough. Are you sure it's not a black cube?
+          </p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm text-brand-sky">Get in touch</p>
+          <ul class="flex flex-wrap gap-2">
+            {SOCIALS.map(SOCIAL => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+                  {SOCIAL.NAME}
+                </Link>
+                {"•"}
+              </li>
+            ))}
+            <li class="line-clamp-1">
+              <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+                {SITE.EMAIL}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Container>
+</PageLayout>
