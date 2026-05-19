@@ -1,0 +1,18 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { TECH } from "@consts";
+---
+
+<PageLayout title={TECH.TITLE} description={TECH.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-brand-steel/85">
+        Tech
+      </div>
+      <div class="animate space-y-4 text-black/75 font-serif">
+        <p>Tools, stacks, side projects, and things I'm building or breaking. More here soon. ⬢</p>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

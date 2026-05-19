@@ -1,0 +1,39 @@
+<!-- Satellite orbits the mouse cursor -->
+<a id="satellite" href="/space" aria-label="Space!" style="position:fixed; top:0; left:0; z-index:9999; font-size:1.5rem; will-change:transform; cursor:pointer; text-decoration:none; visibility:hidden;">
+  🛰️
+</a>
+
+<script>
+  const orbitRadius = 55;
+  const orbitSpeed = 0.008;
+
+  let angle = 0;
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let targetX = mouseX;
+  let targetY = mouseY;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function tick() {
+    const el = document.getElementById("satellite");
+    if (!el) return;
+
+    // Smoothly follow mouse
+    targetX += (mouseX - targetX) * 0.08;
+    targetY += (mouseY - targetY) * 0.08;
+
+    angle += orbitSpeed;
+    const x = targetX + Math.cos(angle) * orbitRadius;
+    const y = targetY + Math.sin(angle) * orbitRadius;
+
+    el.style.transform = `translate(${x - 12}px, ${y - 12}px)`;
+    el.style.visibility = "visible";
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+</script>

@@ -24,13 +24,13 @@ body {
 }
 
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-4;
+  @apply py-4;
   @apply bg-white;
 }
 
 main {
   @apply flex-1;
-  padding-top: 19rem;
+  padding-top: 2rem;
   padding-bottom: 4rem;
 }
 
